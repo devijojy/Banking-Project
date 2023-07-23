@@ -1,0 +1,25 @@
+{% load static %}
+<link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+<body>
+<div class = "container">
+    <div class ="title">LOGIN</div>
+        <div class = "content">
+            <form action="login" method ="post">
+                {% csrf_token %}
+                 <div class=" input-box">
+                     <span class="details">UserName</span>
+                     <input type="text" name="username" placeholder="enter your  username"><br>
+                 </div>
+                 <div class=" input-box">
+                     <span class="details">Password</span>
+                    <input type="password" name="password" placeholder="enter your password"><br>
+                 </div>
+                  <div class="button_login">
+                      <input type="submit">
+                  </div>
+                   <a href="register">Register Link</a>
+            </form>
+        </div>
+</div>
+</body>

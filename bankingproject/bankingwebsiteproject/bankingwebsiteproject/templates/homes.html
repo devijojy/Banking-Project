@@ -1,0 +1,31 @@
+
+
+<script>
+    $("#id_district").change(function () {
+        const url = $("#personForm").attr("data-branches-url");
+        const districtId = $(this).val();
+
+        $.ajax({
+            url: url,
+            data: {
+                'district_id': districtId
+            },
+            success: function (data) {
+                $("#id_branch").html(data);
+                /*
+
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (branch) {
+                    html_data += `<option value="${branch.id}">${branch.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_branch").html(html_data);
+
+                */
+            }
+
+
+        });
+
+    });
+</script>
